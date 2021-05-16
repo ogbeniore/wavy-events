@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+
+
+
+/// Regular font family
+/// @type List
+$text-font-stack: Lato, Arial, sans-serif !default;
+
+/// Colors
+/// @type Color
+$dark: #333333 !default;
+$orange: #F5A623 !default;
+$light-grey: #F2F2F2 !default;
+$white: #ffffff;
+
+$colors: (
+  dark: $dark,
+  orange: $orange,
+  light-grey: $light-grey,
+  white: $white,
+);
+
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'sm': 320px,
+  'md': 768px,
+  'lg': 1025px,
+) !default;
+
+
+

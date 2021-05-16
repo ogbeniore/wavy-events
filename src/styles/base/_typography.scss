@@ -1,0 +1,67 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $dark;
+  font-family: $text-font-stack;
+}
+a{
+  cursor: pointer;
+}
+p,
+div,
+ul,
+li,
+input,
+select {
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+  line-height: 2.8rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  @include mq(lg) {
+    font-size: 3.6rem;
+    line-height: 4rem;
+  }
+}
+
+.text-bold {
+  font-weight: 600;
+}
+.text-light {
+  font-weight: 300;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text {
+  @include color-modifiers('color');
+}
+.text-underline {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.text-capitalize {
+  text-transform: capitalize;
+}

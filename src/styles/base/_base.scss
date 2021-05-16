@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  font-family: $text-font-stack;
+  background: $light-grey;
+  min-height: 100vh;
+}
+button,
+div,
+ul,
+li,
+p {
+  font-family: $text-font-stack;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+
+  @include on-event {
+    color: inherit;
+    text-decoration: initial;
+  }
+}
+.grid-columns {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1rem;
+  .col {
+    grid-column: span 12;
+  }
+  @include grid-generator(12);
+  @include mq(lg) {
+    grid-gap: 2.4rem;
+  }
+}
+.bg {
+  @include color-modifiers('background');
+}

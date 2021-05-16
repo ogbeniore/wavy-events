@@ -30,3 +30,4 @@
   }
 }
 </style>
+<style lang="scss" src="@/styles/main.scss"></style>

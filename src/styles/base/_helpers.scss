@@ -1,0 +1,139 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  max-width: 1180px; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  width: 90%; /* 1 */
+  position: relative;
+  box-sizing: border-box;
+ }
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+
+
+@for $i from 0 through 10 {
+  .p {
+    &-#{$i} {
+      padding: #{$i}rem !important;
+    }
+    &y-#{$i},
+    &t-#{$i} {
+      padding-top: #{$i}rem;
+    }
+    &y-#{$i},
+    &b-#{$i} {
+      padding-bottom: #{$i}rem;
+    }
+    &x-#{$i},
+    &l-#{$i} {
+      padding-left: #{$i}rem;
+    }
+    &x-#{$i},
+    &r-#{$i} {
+      padding-right: #{$i}rem;
+    }
+  }
+  .m {
+    &-#{$i} {
+      margin: #{$i}rem;
+    }
+    &y-#{$i},
+    &t-#{$i} {
+      margin-top: #{$i}rem;
+    }
+    &y-#{$i},
+    &b-#{$i} {
+      margin-bottom: #{$i}rem;
+    }
+    &x-#{$i},
+    &l-#{$i} {
+      margin-left: #{$i}rem;
+    }
+    &x-#{$i},
+    &r-#{$i} {
+      margin-right: #{$i}rem;
+    }
+  }
+}
+.m-auto {
+  margin: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+.d-md-flex {
+  display: block;
+  @include mq(md) {
+    display: flex;
+  }
+}
+.d-lg-flex {
+  display: block;
+  @include mq(lg) {
+    display: flex;
+  }
+}
+.d-sm-flex {
+  display: flex;
+  @include mq(lg) {
+    display: none;
+  }
+}
