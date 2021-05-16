@@ -1,0 +1,62 @@
+.btn {
+  background-color: $orange;
+  color: $white;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+  padding: 1.8rem 0;
+  border-radius: 0.4rem;
+  box-shadow: 1px 1px 3px 0 rgba(50, 50, 54, 0.13);
+  border: none;
+  width: 100%;
+  transition: all 200ms ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  &--small {
+    font-size: 1.2rem;
+    padding: 1.4rem 2.2rem;
+    width: unset;
+  }
+  &:hover {
+    background-color: #db8c0a;
+  }
+  &:focus,
+  &:focus-within {
+    outline: 1px dashed $orange;
+  }
+  &:disabled {
+    background-color:  #e1a545;
+  }
+  &__loader {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 1rem;
+    position: relative;
+    display: inline-block;
+    box-sizing: content-box;
+    &::after {
+      content: " ";
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      box-sizing: content-box;
+      backface-visibility: hidden;
+      border-radius: 50%;
+      border: 0.2rem solid currentColor;
+      border-left-color: transparent;
+      animation: ld-spin 500ms infinite linear;
+      transform-origin: 50% 50%;
+      transform-box: fill-box;
+    }
+  }
+}
+@keyframes ld-spin
+{
+  0% {
+    animation-timing-function: cubic-bezier(0.5856,0.0703,0.4143,0.9297);
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
