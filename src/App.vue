@@ -2,15 +2,17 @@
   <div id="app">
     <f-navigation />
     <router-view/>
+    <f-footer />
   </div>
 </template>
 
 <script>
-import { FNavigation } from '@/components';
+import { FNavigation, FFooter } from '@/components';
 
 export default {
   components: {
     FNavigation,
+    FFooter,
   },
 };
 </script>
