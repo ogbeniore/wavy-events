@@ -1,0 +1,59 @@
+.event-card {
+  position: relative;
+  &__image {
+    height: 23rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.6rem;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.31));
+    margin: 0;
+    margin-bottom: 2rem;
+    img {
+      height: 100%;
+      width: auto;
+      transition: all 1000ms 100ms ease-in-out;
+    }
+  }
+  &__date {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    line-height: 1.4rem;
+  }
+  &__name {
+    color: #333333;
+    margin: 0.6rem 0;
+    font-weight: bold;
+  }
+  &__price {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    letter-spacing: 1px;
+    &.--sold-out {
+      color: #EB5757;
+      font-weight: bold;
+    }
+    &.--free {
+      color: #219653;
+      font-weight: bold;
+    }
+  }
+  &__link {
+    display: block;
+    z-index: 1;
+    opacity: 0;
+    height: 0;
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      content: " ";
+    }
+  }
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+  }
+}
