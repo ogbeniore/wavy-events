@@ -1,0 +1,27 @@
+.form-item {
+  margin-bottom: 2rem;
+  &__label {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: #333333;
+    font-weight: 300;
+  }
+  &__input {
+    margin-top: 1.4rem;
+    width: 100%;
+    border-radius: 0.4rem;
+    border: 1px solid #E0E0E0;
+    font-size: 1.6rem;
+    padding: 1.4rem 1.6rem;
+    @include on-event {
+      outline: 1px solid $orange;
+    }
+    &.error {
+      outline: 1px solid #EB5757;
+    }
+  }
+  &__error {
+    color: #EB5757;
+    margin-top: 0.6rem;
+  }
+}
