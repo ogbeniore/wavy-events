@@ -1,0 +1,35 @@
+
+.modal {
+  position: fixed;
+  z-index: 1234239;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(51, 51, 51, 0.45);
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  &__close {
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background: transparent;
+    top: 4rem;
+    right: 4rem;
+  }
+  @include mq(md) {
+    align-items: center;
+  }
+}
+.modal-fade-enter,
+.modal-fade-leave-active {
+  opacity: 0;
+  transform: scale(1.2);
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: all .5s ease;
+}

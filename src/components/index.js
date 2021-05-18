@@ -5,6 +5,7 @@ import EventCard from './EventCard/EventCard.vue';
 import Cart from './Cart/Cart.vue';
 import FInput from './FInput/Input.vue';
 import FCard from './Card.vue';
+import FModal from './Modal/Modal.vue';
 
 export {
   FButton,
@@ -14,4 +15,5 @@ export {
   Cart,
   FInput,
   FCard,
+  FModal,
 };

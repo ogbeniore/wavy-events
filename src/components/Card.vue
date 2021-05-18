@@ -9,6 +9,7 @@
   background: $white;
   padding: 3rem;
   width: 100%;
+  position: relative;
   @include mq(md) {
     padding: 5rem;
     max-width: 47rem;
