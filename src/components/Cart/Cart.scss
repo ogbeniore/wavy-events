@@ -115,3 +115,13 @@
     }
   }
 }
+.modal-fade-enter,
+.modal-fade-leave-active {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: all .5s ease;
+}

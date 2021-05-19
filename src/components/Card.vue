@@ -12,7 +12,7 @@
   position: relative;
   @include mq(md) {
     padding: 5rem;
-    max-width: 47rem;
+    max-width: 42rem;
     border-radius: 1rem;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     margin: 0 auto;
