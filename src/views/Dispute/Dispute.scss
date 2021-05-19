@@ -1,0 +1,31 @@
+.dispute {
+  margin-top: 7rem;
+  &__title {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    font-weight: 600;
+    text-align: center;
+    max-width: 39rem;
+    margin: 1.3rem auto;
+  }
+  &__success {
+    min-height: 37rem;
+    text-align: center;
+    max-width: 33rem;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    img {
+      margin: 2rem auto 7rem auto;
+    }
+    &__message {
+      color: #000000;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 2.2rem;
+      margin-bottom: 3.4rem;
+      .text-blue {
+        color: #2d9cdb;
+      }
+    }
+  }
+}

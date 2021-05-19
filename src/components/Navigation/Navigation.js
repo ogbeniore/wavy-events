@@ -8,4 +8,11 @@ export default {
   data: () => ({
     open: false,
   }),
+  watch: {
+    $route(val) {
+      if (val) {
+        this.open = false;
+      }
+    },
+  },
 };

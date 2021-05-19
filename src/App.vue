@@ -24,8 +24,12 @@ export default {
   background-image: url("./assets/lines.svg");
   background-repeat: no-repeat;
   background-position: 100% 100%;
+  background-size: contain;
   &.no-lines {
     background-image: unset;
+  }
+  main {
+    min-height: 80vh;
   }
 }
 </style>
