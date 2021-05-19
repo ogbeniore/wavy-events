@@ -8,10 +8,23 @@
     filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.31));
     margin: 0;
     margin-bottom: 2rem;
-    img {
+    img,
+    &__empty {
       height: 100%;
-      width: auto;
+      width: 100%;
+      object-fit: cover;
       transition: all 1000ms 100ms ease-in-out;
+    }
+    &__empty {
+      background: $orange;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        font-size: 2.4rem;
+        text-transform: uppercase;
+      }
     }
   }
   &__date {
@@ -53,6 +66,9 @@
   }
   &:hover {
     img {
+      transform: scale(1.05);
+    }
+    &__empty {
       transform: scale(1.2);
     }
   }

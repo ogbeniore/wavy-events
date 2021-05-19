@@ -1,13 +1,11 @@
 <template>
   <div class="home">
     <h1>The best events happening now.</h1>
-    <div class="event-list">
-      <event-card />
-      <event-card />
-      <event-card />
-      <event-card />
-      <event-card />
-      <event-card />
+    <div class="event__list" ref="events">
+      <event-card v-for="event in allEvents" :key="event.id" :event="event" />
+    </div>
+    <div class="text-center" v-if="isLoading">
+      <div class="event__loader" ></div>
     </div>
   </div>
 </template>

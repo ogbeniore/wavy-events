@@ -1,7 +1,9 @@
 .home {
   padding: 10rem 0;
 }
-.event-list {
+
+.event {
+  &__list {
   display: grid;
   grid-row-gap: 3rem;
   grid-column-gap: 2rem;
@@ -10,5 +12,29 @@
   grid-template-columns: minmax(0, 1fr);
   @include mq(md) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+  &__loader {
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    display: inline-block;
+    box-sizing: content-box;
+    color: $orange;
+    margin: 0 auto;
+    &::after {
+      content: " ";
+      display: block;
+      width: 10rem;
+      height: 10rem;
+      box-sizing: content-box;
+      backface-visibility: hidden;
+      border-radius: 50%;
+      border: 1rem solid currentColor;
+      border-left-color: transparent;
+      animation: ld-spin 1000ms infinite linear;
+      transform-origin: 50% 50%;
+      transform-box: fill-box;
+    }
   }
 }
