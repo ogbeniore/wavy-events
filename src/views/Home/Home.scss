@@ -1,0 +1,14 @@
+.home {
+  padding: 10rem 0;
+}
+.event-list {
+  display: grid;
+  grid-row-gap: 3rem;
+  grid-column-gap: 2rem;
+  padding: 4rem 0;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr);
+  @include mq(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
