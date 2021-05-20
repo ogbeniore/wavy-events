@@ -29,7 +29,7 @@ export default {
     background-image: unset;
   }
   main {
-    min-height: 80vh;
+    min-height: 85vh;
   }
 }
 </style>

@@ -24,7 +24,6 @@ export default {
         userData, singleEvent: event, totalPayment, subTotal, selectedCartItems, vat,
       } = this;
       const ticketsBought = {};
-      // eslint-disable-next-line array-callback-return
       selectedCartItems.map((item) => {
         ticketsBought[item.id] = item.numberOfTicketsBought;
       });
@@ -67,7 +66,6 @@ export default {
       const result = [];
       const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
       const charactersLength = characters.length;
-      // eslint-disable-next-line no-plusplus
       for (let i = 0; i < 12; i++) {
         result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
       }
