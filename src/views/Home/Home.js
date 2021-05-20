@@ -18,7 +18,6 @@ export default {
     ...mapActions(['fetchEvents']),
     handleScroll() {
       // check current scrollLevel
-      debugger;
       if (document.documentElement.scrollHeight - window.scrollY === window.innerHeight) {
         this.isLoading = !this.onLastPage;
         this.fetchEvents();

@@ -2,7 +2,7 @@
   <article class="event-card" aria-label="event">
     <figure class="event-card__image" aria-label="event-image">
       <img :src="event.image" :alt="event.name" v-if="event.image">
-      <div class="event-card__image__empty" v-else>
+      <div class="image__empty" v-else>
         <p>No Image</p>
       </div>
     </figure>

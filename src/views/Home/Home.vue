@@ -5,7 +5,7 @@
       <event-card v-for="event in allEvents" :key="event.id" :event="event" />
     </div>
     <div class="text-center" v-if="isLoading">
-      <div class="event__loader" ></div>
+      <div class="loader" ></div>
     </div>
   </div>
 </template>
