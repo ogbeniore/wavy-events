@@ -2,27 +2,23 @@
   <div class="order-summary">
     <h2 class="order-summary__header">ORDER SUMMARY</h2>
     <ul class="ticket-list">
-      <li class="ticket-list__item">
-        <span class="text-bold">2 - Regular</span>
-        <span>N10,000</span>
-      </li>
-      <li class="ticket-list__item">
-        <span class="text-bold">2 - VIP</span>
-        <span>N100,000</span>
+      <li class="ticket-list__item" v-for="item in selectedCartItems" :key="item.id">
+        <span class="text-bold">{{item.numberOfTicketsBought}} - {{item.name}}</span>
+        <span>{{item | calcTotal | formatAmount}}</span>
       </li>
     </ul>
     <ul class="ticket-list">
       <li class="ticket-list__item">
         <span class="text-bold">Sub-total</span>
-        <span>N110,000</span>
+        <span>{{ subTotal | formatAmount }}</span>
       </li>
       <li class="ticket-list__item">
         <span class="text-bold">VAT</span>
-        <span>N100</span>
+        <span>{{ 100 | formatAmount}}</span>
       </li>
       <li class="ticket-list__item">
         <span class="text-bold">TOTAL PAYMENT</span>
-        <span class="text-total">N111,000</span>
+        <span class="text-total">{{subTotal + 100 | formatAmount}}</span>
       </li>
     </ul>
     <f-button>Continue</f-button>
@@ -37,11 +33,27 @@
 </template>
 <script>
 import { FButton } from '@/components';
+import { mapGetters } from 'vuex';
+import { ticketTotal, SUM } from '@/utils/calc';
 
 export default {
   name: 'OrderSummary',
   components: {
     FButton,
+  },
+  computed: {
+    ...mapGetters(['selectedCartItems']),
+    subTotal() {
+      const { selectedCartItems } = this;
+      const prices = [];
+      selectedCartItems.map((item) => prices.push(ticketTotal(item)));
+      return SUM(prices);
+    },
+  },
+  filters: {
+    calcTotal(value) {
+      return ticketTotal(value);
+    },
   },
 };
 </script>
