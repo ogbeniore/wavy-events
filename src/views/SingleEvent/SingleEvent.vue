@@ -29,11 +29,12 @@
     <div class="text-center" v-else>
       <div class="loader" ></div>
     </div>
-    <cart v-show="showCart" @close="showCart = false" />
+    <cart v-show="showCart" @close="showCart = false" @success="showFreeModal = true" />
     <register-modal
       :show-free-modal="showFreeModal"
       :event-id="singleEvent && singleEvent.id"
       :event-name="singleEvent && singleEvent.name"
+      :is-success="!isFree"
       @close="showFreeModal = false" />
   </div>
 </template>

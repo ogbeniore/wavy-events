@@ -23,14 +23,14 @@ export default {
     ...mapGetters(['singleEvent', 'ticketTypes']),
     lowestPrice() {
       const { ticketTypes, isFree } = this;
-      return !isFree && ticketTypes[0].price;
+      return !isFree && ticketTypes && ticketTypes[0].price;
     },
     highestPrice() {
       const { ticketTypes, isFree } = this;
-      return !isFree && ticketTypes[ticketTypes.length - 1].price;
+      return !isFree && ticketTypes && ticketTypes[ticketTypes.length - 1].price;
     },
     isFree() {
-      return !this.ticketTypes.length;
+      return this.ticketTypes && !this.ticketTypes.length;
     },
   },
   mounted() {

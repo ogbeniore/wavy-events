@@ -25,10 +25,15 @@ const registerForEvent = function registerForEvent({ body, event }) {
   const url = `events/${event}/register`;
   return API.post(url, body);
 };
+const createTicketOrder = function createTicketOrder({ body }) {
+  const url = 'orders';
+  return API.post(url, body);
+};
 
 export {
   getEvents,
   getSingleEvent,
   getTicketTypes,
   registerForEvent,
+  createTicketOrder,
 };

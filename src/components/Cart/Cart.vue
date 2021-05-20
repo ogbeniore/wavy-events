@@ -32,9 +32,13 @@
           Ticket sales ends on {{singleEvent && singleEvent.tickets_sale_end_date | formatDate}}
         </small>
       </section>
-      <section class="cart__sidebar">
-        <order-summary />
-      </section>
+      <aside class="cart__sidebar">
+        <order-details-form
+          v-show="showOrderForm"
+          @back="showOrderForm = false"
+          @success="handleSuccess" />
+        <order-summary v-show="!showOrderForm" @continue="showOrderForm = true"/>
+      </aside>
     </div>
   </transition>
 </template>

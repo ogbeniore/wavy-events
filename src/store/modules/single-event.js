@@ -25,19 +25,19 @@ export default {
         numberOfTicketsBought: 0,
       }));
     },
-    SET_INITIAL_ORDER(state, ticketTypes) {
-      const order = {};
-      ticketTypes.forEach((element) => {
-        order[element] = 0;
-      });
-      state.order = order;
-    },
     UPDATE_CART(state, { id, updateQuantity }) {
       state.cart.tickets.forEach((ticket) => {
         if (ticket.id === id) {
           (ticket.numberOfTicketsBought = updateQuantity(ticket.numberOfTicketsBought));
         }
       });
+    },
+    RESET_CART(state) {
+      state.cart.userDetails = {};
+      state.cart.tickets = state.ticketTypes.map((type) => ({
+        ...type,
+        numberOfTicketsBought: 0,
+      }));
     },
   },
   actions: {
@@ -58,6 +58,9 @@ export default {
     },
     updateCartQuantity({ commit }, payload) {
       commit('UPDATE_CART', payload);
+    },
+    clearCart({ commit }) {
+      commit('RESET_CART');
     },
   },
   getters: {

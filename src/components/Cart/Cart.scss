@@ -5,6 +5,7 @@
   bottom: 0;
   right: 0;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   background: $light-grey;
   overflow: auto;
@@ -93,6 +94,7 @@
     padding: 3rem;
     max-height: 100vh;
     overflow: auto;
+    display: grid;
   }
   @include mq(md) {
     flex-direction: row;

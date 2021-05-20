@@ -1,6 +1,6 @@
 <template>
   <f-modal v-show="showFreeModal" :loading="isLoading" @close="$emit('close')">
-    <template v-if="showForm">
+    <template v-if="!isSuccess && showForm">
       <h3 class="modal__title">
         Register for free
       </h3>
@@ -40,6 +40,9 @@ export default {
     },
     eventName: {
       type: String,
+    },
+    isSuccess: {
+      type: Boolean,
     },
   },
   components: {
