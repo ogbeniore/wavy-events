@@ -2,9 +2,9 @@
   <div class="dispute">
     <h1 class="dispute__title">Enter your email and we’ll send your tickets right away!</h1>
     <f-card>
-      <form v-if="showForm">
-        <f-input name="email" label="Email address" type="email" />
-        <f-button>Confirm and send ticket</f-button>
+      <form v-if="showForm" @submit.prevent="confirmDispute">
+        <f-input name="email" label="Email address" type="email" v-model="email" />
+        <f-button :loading="isLoading">Confirm and send ticket</f-button>
       </form>
       <div class="dispute__success" v-else>
         <img src="@/assets/success.svg" alt="Transaction Successful">
@@ -12,10 +12,10 @@
           Your tickets have been confirmed and sent to your email address at
           <br>
           <span class="text-blue">
-          ted@flutterwave.com
+          {{email}}
           </span>
         </p>
-         <f-button>Buy more tickets</f-button>
+         <f-button @click="$router.push('/')">Buy more tickets</f-button>
       </div>
     </f-card>
   </div>

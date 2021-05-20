@@ -8,6 +8,16 @@ export default {
     FButton,
   },
   data: () => ({
-    showForm: false,
+    showForm: true,
+    email: null,
+    isLoading: false,
   }),
+  methods: {
+    confirmDispute() {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.showForm = false;
+      }, 3000);
+    },
+  },
 };
