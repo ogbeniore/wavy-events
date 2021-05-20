@@ -9,7 +9,8 @@
       :type="type"
       :name="name"
       :class="['form-item__input', { 'error': hasError }]"
-      v-model.trim="innerValue">
+      v-model.trim="innerValue"
+      required>
     <small class="form-item__error" v-if="hasError">{{name}} is invalid</small>
   </div>
 </template>

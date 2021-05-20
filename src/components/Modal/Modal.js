@@ -5,6 +5,12 @@ export default {
   components: {
     FCard,
   },
+  props: {
+    loading: {
+      default: false,
+      type: Boolean,
+    },
+  },
   methods: {
     closeModal() {
       this.$emit('close');

@@ -1,5 +1,5 @@
 import {
-  FButton, Cart, FModal, FInput, SingleEventData,
+  FButton, Cart, FModal, FInput, SingleEventData, RegisterModal,
 } from '@/components';
 // import vuex things
 import { mapActions, mapGetters } from 'vuex';
@@ -12,6 +12,7 @@ export default {
     FModal,
     FInput,
     SingleEventData,
+    RegisterModal,
   },
   data: () => ({
     showCart: false,
@@ -21,12 +22,12 @@ export default {
   computed: {
     ...mapGetters(['singleEvent', 'ticketTypes']),
     lowestPrice() {
-      const { ticketTypes } = this;
-      return ticketTypes && ticketTypes[0].price;
+      const { ticketTypes, isFree } = this;
+      return !isFree && ticketTypes[0].price;
     },
     highestPrice() {
-      const { ticketTypes } = this;
-      return ticketTypes && ticketTypes[ticketTypes.length - 1].price;
+      const { ticketTypes, isFree } = this;
+      return !isFree && ticketTypes[ticketTypes.length - 1].price;
     },
     isFree() {
       return !this.ticketTypes.length;

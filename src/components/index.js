@@ -7,6 +7,7 @@ import FInput from './FInput/Input.vue';
 import FCard from './Card.vue';
 import FModal from './Modal/Modal.vue';
 import SingleEventData from './SingleEvent/SingleEventData.vue';
+import RegisterModal from './SingleEvent/RegisterModal.vue';
 
 export {
   FButton,
@@ -18,4 +19,5 @@ export {
   FCard,
   FModal,
   SingleEventData,
+  RegisterModal,
 };
